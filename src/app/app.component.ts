@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+interface Fecha{
+  dd: number
+  mm: number
+  yy: number
+}
+
 // Decorator
 @Component({
   selector: 'app-root', // selector which we are going to use wherever we want it to render
@@ -7,5 +13,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'the-angular-project';
+  fechas: Fecha[]
+  title: String = 'the-angular-project'
 }

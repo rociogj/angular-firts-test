@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'test-comp',
@@ -7,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
   // styleUrls: ['./test-comp.component.css']
 })
 export class TestCompComponent implements OnInit {
-  public propTest: boolean = true
-  public propNum: number = 123
+  public propTest: boolean
+  @Input() propNum: number = 123
   public introText: string = 'test-comp works!'
   constructor () {}
 
   ngOnInit () {}
 
-  functionTest () {
-    return this.propTest
+  @Output() functionTest () {
+    return this.propNum
   }
+  
+  @Output() alertClicked : EventEmitter<String> = new EventEmitter<String>()
 
 }
